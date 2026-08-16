@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | Tri Deo Aditya</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            background: #07090d;
+
+            color: white;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+
+            pointer-events: none;
+
+        }
+
+
+        .glow {
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(0,170,255,0.08);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+
+            left: 20%;
+            top: 20%;
+
+            pointer-events: none;
+
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            padding: 45px 8%;
+
+            position: relative;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .logo-icon {
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            color: #00aaff;
+
+            background: rgba(0,170,255,0.1);
+
+            border: 1px solid rgba(0,170,255,0.3);
+
+        }
+
+
+        .page-number {
+
+            color: #555;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        /* =========================
+           HERO TITLE
+        ========================= */
+
+        .intro {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .label {
+
+            color: #00aaff;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .intro h1 {
+
+            font-size: 52px;
+
+            line-height: 1;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .intro h1 span {
+
+            color: #00aaff;
+
+        }
+
+
+        .intro p {
+
+            max-width: 650px;
+
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================
+           GRID
+        ========================= */
+
+        .sections {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 25px;
+
+        }
+
+
+        .panel {
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.06),
+                    rgba(255,255,255,0.02)
+                );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.35);
+
+        }
+
+
+        .panel-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .panel-title i {
+
+            color: #00aaff;
+
+        }
+
+
+        .panel-title h2 {
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        /* =========================
+           EDUCATION TIMELINE
+        ========================= */
+
+        .timeline {
+
+            position: relative;
+
+            padding-left: 28px;
+
+        }
+
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 5px;
+
+            top: 5px;
+
+            bottom: 5px;
+
+            width: 1px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #00aaff,
+                    rgba(0,170,255,0.08)
+                );
+
+        }
+
+
+        .education {
+
+            position: relative;
+
+            margin-bottom: 32px;
+
+        }
+
+
+        .education:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+        .dot {
+
+            position: absolute;
+
+            left: -28px;
+
+            top: 3px;
+
+            width: 11px;
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: #07090d;
+
+            border: 2px solid #00aaff;
+
+            box-shadow:
+                0 0 12px rgba(0,170,255,0.5);
+
+        }
+
+
+        .education .year {
+
+            color: #00aaff;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .education h3 {
+
+            font-size: 15px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .education p {
+
+            color: #666;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .current {
+
+            display: inline-block;
+
+            margin-top: 8px;
+
+            padding: 4px 8px;
+
+            border-radius: 5px;
+
+            color: #00aaff;
+
+            background: rgba(0,170,255,0.08);
+
+            border: 1px solid rgba(0,170,255,0.15);
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =========================
+           HOBBIES
+        ========================= */
+
+        .hobbies {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+        }
+
+
+        .hobby {
+
+            min-height: 110px;
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            background: rgba(255,255,255,0.025);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            transition: 0.3s;
+
+        }
+
+
+        .hobby:hover {
+
+            transform: translateY(-4px);
+
+            border-color: rgba(0,170,255,0.3);
+
+            background: rgba(0,170,255,0.04);
+
+        }
+
+
+        .hobby i {
+
+            color: #00aaff;
+
+            font-size: 18px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .hobby h3 {
+
+            font-size: 11px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .hobby p {
+
+            color: #555;
+
+            font-size: 9px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =========================
+           MUSIC PLAYER
+        ========================= */
+
+        .music {
+
+            margin-top: 25px;
+
+            padding: 20px;
+
+            border-radius: 16px;
+
+            background: rgba(255,255,255,0.025);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+        }
+
+
+        .music-label {
+
+            color: #555;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .music-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+        }
+
+
+        .album {
+
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 10px;
+
+            color: #00aaff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,170,255,0.2),
+                    rgba(255,255,255,0.03)
+                );
+
+            border: 1px solid rgba(0,170,255,0.2);
+
+        }
+
+
+        .song {
+
+            min-width: 0;
+
+        }
+
+
+        .song h3 {
+
+            font-size: 11px;
+
+            margin-bottom: 5px;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+        }
+
+
+        .song p {
+
+            color: #555;
+
+            font-size: 9px;
+
+        }
+
+
+        .progress {
+
+            height: 2px;
+
+            margin: 18px 0 12px;
+
+            background: rgba(255,255,255,0.08);
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+        }
+
+
+        .progress {
+    cursor: pointer;
+}
+
+.progress span {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background: #00aaff;
+    transition: width 0.1s linear;
+}
+
+
+        .music-controls {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+        .music-controls button {
+
+            border: none;
+
+            background: none;
+
+            color: #555;
+
+            cursor: pointer;
+
+            font-size: 11px;
+
+        }
+
+
+        .music-controls button:hover {
+
+            color: #00aaff;
+
+        }
+
+
+        .music-controls .play {
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 50%;
+
+            background: rgba(0,170,255,0.1);
+
+            border: 1px solid rgba(0,170,255,0.2);
+
+            color: #00aaff;
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 35px;
+
+            padding: 13px 20px;
+
+            border-radius: 10px;
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .back:hover {
+
+            color: #00aaff;
+
+            border-color: #00aaff;
+
+            background: rgba(0,170,255,0.06);
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 850px) {
+
+            .container {
+
+                padding: 30px 20px 50px;
+
+            }
+
+
+            .intro h1 {
+
+                font-size: 42px;
+
+            }
+
+
+            .sections {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            .intro h1 {
+
+                font-size: 36px;
+
+            }
+
+
+            .panel {
+
+                padding: 22px;
+
+            }
+
+
+            .hobbies {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="glow"></div>
+
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-route"></i>
+
+            </div>
+
+            TRI DEO ADITYA
+
+        </div>
+
+
+        <div class="page-number">
+
+            02 / ABOUT
+
+        </div>
+
+    </header>
+
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <div class="label">
+            MY JOURNEY
+        </div>
+
+
+        <h1>
+            A little bit
+            <span>about me.</span>
+        </h1>
+
+
+        <p>
+
+            Setiap perjalanan memiliki awal.
+            Berikut adalah perjalanan pendidikan,
+            hal-hal yang saya sukai, dan beberapa
+            interest yang menjadi bagian dari diri saya.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- SECTIONS -->
+
+    <main class="sections">
+
+
+        <!-- EDUCATION -->
+
+        <section class="panel">
+
+            <div class="panel-title">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <h2>
+                    EDUCATION JOURNEY
+                </h2>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <!-- SD -->
+
+                <div class="education">
+
+                    <div class="dot"></div>
+
+                    <div class="year">
+                        2015 — 2021
+                    </div>
+
+                    <h3>
+                        SDN 06 SEMPARUK
+                    </h3>
+
+                    <p>
+                        Elementary School
+                    </p>
+
+                </div>
+
+
+
+                <!-- SMP -->
+
+                <div class="education">
+
+                    <div class="dot"></div>
+
+                    <div class="year">
+                        2021 — 2024
+                    </div>
+
+                    <h3>
+                        SMPN 03 SEMPARUK
+                    </h3>
+
+                    <p>
+                        Junior High School
+                    </p>
+
+                </div>
+
+
+
+                <!-- SMK -->
+
+                <div class="education">
+
+                    <div class="dot"></div>
+
+                    <div class="year">
+                        2024 — NOW
+                    </div>
+
+                    <h3>
+                        SMKN 01 SEMPARUK
+                    </h3>
+
+                    <p>
+                        Rekayasa Perangkat Lunak
+                    </p>
+
+                    <span class="current">
+                        GRADE 12 · CURRENT
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- HOBBIES -->
+
+        <section class="panel">
+
+            <div class="panel-title">
+
+                <i class="fa-solid fa-gamepad"></i>
+
+                <h2>
+                    HOBBIES & INTERESTS
+                </h2>
+
+            </div>
+
+
+            <div class="hobbies">
+
+
+                <div class="hobby">
+
+                    <i class="fa-solid fa-gamepad"></i>
+
+                    <h3>
+                        GAMING
+                    </h3>
+
+                    <p>
+                        Menikmati berbagai game
+                        untuk hiburan dan mengisi waktu luang.
+                    </p>
+
+                </div>
+
+
+                <div class="hobby">
+
+                    <i class="fa-solid fa-dumbbell"></i>
+
+                    <h3>
+                        WORKOUT
+                    </h3>
+
+                    <p>
+                        Workout, gym, dan fitness
+                        sebagai aktivitas fisik.
+                    </p>
+
+                </div>
+
+
+                <div class="hobby">
+
+                    <i class="fa-solid fa-film"></i>
+
+                    <h3>
+                        MOVIES & SERIES
+                    </h3>
+
+                    <p>
+                        Menonton film dan series
+                        sebagai hiburan.
+                    </p>
+
+                </div>
+
+
+                <div class="hobby">
+
+                    <i class="fa-solid fa-headphones"></i>
+
+                    <h3>
+                        MUSIC
+                    </h3>
+
+                    <p>
+                        Mendengarkan musik
+                        saat bersantai atau beraktivitas.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- MUSIC -->
+
+<div class="music">
+
+    <div class="music-label">
+        FAVORITE MUSIC
+    </div>
+
+
+    <div class="music-info">
+
+        <div class="album">
+
+            <i class="fa-solid fa-music"></i>
+
+        </div>
+
+
+        <div class="song">
+
+            <h3 id="song-title">
+                Love.
+            </h3>
+
+            <p id="song-artist">
+                Wave to Earth
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="progress">
+
+        <span id="progress-bar"></span>
+
+    </div>
+
+
+    <div class="music-controls">
+
+        <button
+            type="button"
+            id="prev-btn">
+
+            <i class="fa-solid fa-backward-step"></i>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="play"
+            id="play-btn">
+
+            <i class="fa-solid fa-play"></i>
+
+        </button>
+
+
+        <button
+            type="button"
+            id="next-btn">
+
+            <i class="fa-solid fa-forward-step"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- BACK -->
+
+    <div style="text-align:center;">
+
+        <a href="index.html" class="back">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            BACK TO MENU
+
+        </a>
+
+    </div>
+
+
+</div>
+
+<script>
+
+    const songs = [
+
+    {
+        title: "Love",
+        artist: "Wave to Earth",
+        src: "love.mp3"
+    },
+
+    {
+        title: "Those Eyes",
+        artist: "New West",
+        src: "music/those-eyes.mp3"
+    },
+
+    {
+        title: "Best Part (feat. H.E.R.)",
+        artist: "Daniel Caesar",
+        src: "best-part.mp3"
+    },
+
+    {
+        title: "Dandelions",
+        artist: "Ruth B.",
+        src: "dandelions.mp3"
+    },
+
+    {
+        title: "The Man Who Can't Be Moved",
+        artist: "The Script",
+        src: "man-who.mp3"
+    },
+
+    {
+        title: "BIRDS OF A FEATHER",
+        artist: "Billie Eilish",
+        src: "birds-of-feather.mp3"
+    },
+
+    {
+        title: "double take",
+        artist: "dhruv",
+        src: "double-take.mp3"
+    },
+
+    {
+        title: "Love Yourself",
+        artist: "Justin Bieber",
+        src: "love-yourself.mp3"
+    },
+
+    {
+        title: "That Should Be Me",
+        artist: "Justin Bieber",
+        src: "that-should-be-me.mp3"
+    },
+
+    {
+        title: "Seasons",
+        artist: "wave to earth",
+        src: "seasons.mp3"
+    },
+
+    {
+        title: "Happiness",
+        artist: "Rex Orange County",
+        src: "happiness.mp3"
+    },
+
+    {
+        title: "It's You",
+        artist: "Ali Gatie",
+        src: "its-you.mp3"
+    },
+
+    {
+        title: "I Like Me Better",
+        artist: "Lauv",
+        src: "i-like-me-better.mp3"
+    },
+
+    {
+        title: "La La Lost You",
+        artist: "NIKI",
+        src: "lost-you.mp3"
+    }
+
+];
+
+    let currentSong = 0;
+
+    let audio = new Audio();
+
+    let isPlaying = false;
+
+
+    const title = document.getElementById("song-title");
+
+    const artist = document.getElementById("song-artist");
+
+    const playButton = document.getElementById("play-btn");
+
+    const progressBar = document.getElementById("progress-bar");
+
+    const progress = document.querySelector(".progress");
+
+    const prevButton = document.getElementById("prev-btn");
+
+    const nextButton = document.getElementById("next-btn");
+
+
+    function loadSong(index) {
+
+        currentSong = index;
+
+        audio.src = songs[currentSong].src;
+
+        title.textContent = songs[currentSong].title;
+
+        artist.textContent = songs[currentSong].artist;
+
+        progressBar.style.width = "0%";
+
+    }
+
+
+    function playSong() {
+
+        audio.play();
+
+        isPlaying = true;
+
+        playButton.innerHTML =
+            '<i class="fa-solid fa-pause"></i>';
+
+    }
+
+
+    function pauseSong() {
+
+        audio.pause();
+
+        isPlaying = false;
+
+        playButton.innerHTML =
+            '<i class="fa-solid fa-play"></i>';
+
+    }
+
+
+    playButton.addEventListener("click", function () {
+
+        if (isPlaying) {
+
+            pauseSong();
+
+        } else {
+
+            playSong();
+
+        }
+
+    });
+
+
+    nextButton.addEventListener("click", function () {
+
+        currentSong++;
+
+        if (currentSong >= songs.length) {
+
+            currentSong = 0;
+
+        }
+
+        loadSong(currentSong);
+
+        playSong();
+
+    });
+
+
+    prevButton.addEventListener("click", function () {
+
+        currentSong--;
+
+        if (currentSong < 0) {
+
+            currentSong = songs.length - 1;
+
+        }
+
+        loadSong(currentSong);
+
+        playSong();
+
+    });
+
+
+    audio.addEventListener("timeupdate", function () {
+
+        if (!audio.duration) return;
+
+        const progressPercent =
+            (audio.currentTime / audio.duration) * 100;
+
+        progressBar.style.width =
+            progressPercent + "%";
+
+    });
+
+
+    progress.addEventListener("click", function (event) {
+
+        if (!audio.duration) return;
+
+        const width = progress.clientWidth;
+
+        const clickPosition = event.offsetX;
+
+        audio.currentTime =
+            (clickPosition / width) * audio.duration;
+
+    });
+
+
+    audio.addEventListener("ended", function () {
+
+        currentSong++;
+
+        if (currentSong >= songs.length) {
+
+            currentSong = 0;
+
+        }
+
+        loadSong(currentSong);
+
+        playSong();
+
+    });
+
+
+    loadSong(0);
+
+</script>
+
+
+</body>
+
+</html>

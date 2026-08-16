@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skills | Tri Deo Aditya</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #07090d;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+            pointer-events: none;
+        }
+
+        .glow {
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(0,170,255,0.08);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+
+            right: 10%;
+            top: 20%;
+
+            pointer-events: none;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+
+            padding: 45px 8%;
+
+            position: relative;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 55px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            color: #00aaff;
+
+            background: rgba(0,170,255,0.1);
+
+            border: 1px solid rgba(0,170,255,0.3);
+        }
+
+        .page-number {
+            color: #555;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+        }
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            max-width: 1100px;
+
+            margin: auto;
+            margin-bottom: 45px;
+        }
+
+        .label {
+            color: #00aaff;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+        .intro h1 {
+            font-size: 52px;
+
+            line-height: 1;
+
+            margin-bottom: 18px;
+        }
+
+        .intro h1 span {
+            color: #00aaff;
+        }
+
+        .intro p {
+            max-width: 650px;
+
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        /* =========================
+           MAIN GRID
+        ========================= */
+
+        .skill-layout {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.25fr 0.75fr;
+
+            gap: 25px;
+        }
+
+        .panel {
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.06),
+                    rgba(255,255,255,0.02)
+                );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.35);
+        }
+
+        .panel-title {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 28px;
+        }
+
+        .panel-title i {
+            color: #00aaff;
+        }
+
+        .panel-title h2 {
+            font-size: 14px;
+
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           SKILL CARDS
+        ========================= */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 18px;
+
+            border-radius: 14px;
+
+            background: rgba(255,255,255,0.025);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(0,170,255,0.3);
+
+            background: rgba(0,170,255,0.04);
+        }
+
+        .skill-top {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 14px;
+        }
+
+        .skill-name {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .skill-name i {
+            color: #00aaff;
+
+            width: 18px;
+
+            text-align: center;
+        }
+
+        .skill-name h3 {
+            font-size: 11px;
+        }
+
+        .level {
+            color: #00aaff;
+
+            font-size: 7px;
+
+            letter-spacing: 1px;
+        }
+
+        .bar {
+            width: 100%;
+
+            height: 4px;
+
+            background: rgba(255,255,255,0.07);
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .bar span {
+            display: block;
+
+            height: 100%;
+
+            background: #00aaff;
+
+            box-shadow:
+                0 0 10px rgba(0,170,255,0.5);
+        }
+
+        .intermediate {
+            width: 70%;
+        }
+
+        .beginner {
+            width: 35%;
+        }
+
+        .skill-description {
+            color: #555;
+
+            font-size: 9px;
+
+            line-height: 1.5;
+
+            margin-top: 10px;
+        }
+
+        /* =========================
+           SPECIAL ABILITIES
+        ========================= */
+
+        .abilities {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .ability {
+            padding: 20px;
+
+            border-radius: 14px;
+
+            background: rgba(255,255,255,0.025);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            transition: 0.3s;
+        }
+
+        .ability:hover {
+            transform: translateX(5px);
+
+            border-color: rgba(0,170,255,0.3);
+        }
+
+        .ability-icon {
+            width: 35px;
+            height: 35px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+
+            margin-bottom: 13px;
+
+            color: #00aaff;
+
+            background: rgba(0,170,255,0.08);
+
+            border: 1px solid rgba(0,170,255,0.15);
+        }
+
+        .ability h3 {
+            font-size: 12px;
+
+            margin-bottom: 7px;
+        }
+
+        .ability p {
+            color: #555;
+
+            font-size: 9px;
+
+            line-height: 1.7;
+        }
+
+        .ability-level {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 4px 8px;
+
+            border-radius: 5px;
+
+            color: #00aaff;
+
+            background: rgba(0,170,255,0.07);
+
+            border: 1px solid rgba(0,170,255,0.12);
+
+            font-size: 7px;
+
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           CURRENT LEARNING
+        ========================= */
+
+        .status-box {
+            margin-top: 15px;
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            background: rgba(0,170,255,0.035);
+
+            border: 1px solid rgba(0,170,255,0.1);
+        }
+
+        .status-title {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+        }
+
+        .status-title span {
+            color: #555;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+        .status-title strong {
+            color: #00aaff;
+
+            font-size: 8px;
+        }
+
+        .status-box p {
+            color: #555;
+
+            font-size: 9px;
+
+            line-height: 1.6;
+        }
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-wrapper {
+            max-width: 1100px;
+
+            margin: 35px auto 0;
+        }
+
+        .back {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 13px 20px;
+
+            border-radius: 10px;
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            color: #00aaff;
+
+            border-color: #00aaff;
+
+            background: rgba(0,170,255,0.06);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 850px) {
+
+            .container {
+                padding: 30px 20px 50px;
+            }
+
+            .intro h1 {
+                font-size: 42px;
+            }
+
+            .skill-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 550px) {
+
+            .intro h1 {
+                font-size: 36px;
+            }
+
+            .panel {
+                padding: 22px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="glow"></div>
+
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+            TRI DEO ADITYA
+
+        </div>
+
+
+        <div class="page-number">
+
+            03 / SKILLS
+
+        </div>
+
+    </header>
+
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <div class="label">
+            PLAYER SKILL LOADOUT
+        </div>
+
+
+        <h1>
+            My <span>skills.</span>
+        </h1>
+
+
+        <p>
+
+            Kemampuan yang saya miliki dan teknologi
+            yang sedang saya pelajari dalam perjalanan
+            saya sebagai siswa Rekayasa Perangkat Lunak.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- SKILL LAYOUT -->
+
+    <main class="skill-layout">
+
+
+        <!-- TECHNICAL SKILLS -->
+
+        <section class="panel">
+
+            <div class="panel-title">
+
+                <i class="fa-solid fa-terminal"></i>
+
+                <h2>
+                    TECHNICAL SKILLS
+                </h2>
+
+            </div>
+
+
+            <div class="skills">
+
+
+                <!-- HTML -->
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <div class="skill-name">
+
+                            <i class="fa-brands fa-html5"></i>
+
+                            <h3>
+                                HTML
+                            </h3>
+
+                        </div>
+
+                        <span class="level">
+                            INTERMEDIATE
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar">
+
+                        <span class="intermediate"></span>
+
+                    </div>
+
+
+                    <p class="skill-description">
+
+                        Struktur dan pengembangan
+                        halaman web.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- CSS -->
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <div class="skill-name">
+
+                            <i class="fa-brands fa-css3-alt"></i>
+
+                            <h3>
+                                CSS
+                            </h3>
+
+                        </div>
+
+                        <span class="level">
+                            INTERMEDIATE
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar">
+
+                        <span class="intermediate"></span>
+
+                    </div>
+
+
+                    <p class="skill-description">
+
+                        Styling, layout,
+                        responsive design, dan UI.
+
+                    </p>
+
+                </div>
+
+
+                <!-- PHP -->
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <div class="skill-name">
+
+                            <i class="fa-brands fa-php"></i>
+
+                            <h3>
+                                PHP
+                            </h3>
+
+                        </div>
+
+                        <span class="level">
+                            INTERMEDIATE
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar">
+
+                        <span class="intermediate"></span>
+
+                    </div>
+
+
+                    <p class="skill-description">
+
+                        Web development,
+                        CRUD, dan database integration.
+
+                    </p>
+
+                </div>
+
+                <!-- CRUD -->
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <div class="skill-name">
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                            <h3>
+                                CRUD
+                            </h3>
+
+                        </div>
+
+                        <span class="level">
+                            INTERMEDIATE
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar">
+
+                        <span class="intermediate"></span>
+
+                    </div>
+
+
+                    <p class="skill-description">
+
+                        Create, Read, Update,
+                        dan Delete data.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- DATABASE -->
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <div class="skill-name">
+
+                            <i class="fa-solid fa-database"></i>
+
+                            <h3>
+                                DATABASE
+                            </h3>
+
+                        </div>
+
+                        <span class="level">
+                            BEGINNER
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar">
+
+                        <span class="beginner"></span>
+
+                    </div>
+
+
+                    <p class="skill-description">
+
+                        Dasar pengelolaan dan penggunaan
+                        database dalam project.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- JAVA -->
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <div class="skill-name">
+
+                            <i class="fa-brands fa-java"></i>
+
+                            <h3>
+                                JAVA
+                            </h3>
+
+                        </div>
+
+                        <span class="level">
+                            BEGINNER
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar">
+
+                        <span class="beginner"></span>
+
+                    </div>
+
+
+                    <p class="skill-description">
+
+                        Dasar pemrograman Java
+                        dan object-oriented programming.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- JDBC -->
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <div class="skill-name">
+
+                            <i class="fa-solid fa-plug"></i>
+
+                            <h3>
+                                JDBC
+                            </h3>
+
+                        </div>
+
+                        <span class="level">
+                            BEGINNER
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar">
+
+                        <span class="beginner"></span>
+
+                    </div>
+
+
+                    <p class="skill-description">
+
+                        Dasar koneksi aplikasi Java
+                        dengan database.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CURRENT LEARNING -->
+
+            <div class="status-box">
+
+                <div class="status-title">
+
+                    <span>
+                        CURRENT LEARNING
+                    </span>
+
+                    <strong>
+                        JAVA + JDBC
+                    </strong>
+
+                </div>
+
+
+                <p>
+
+                    Saat ini saya masih mengembangkan
+                    pemahaman dan kemampuan dalam Java,
+                    JDBC, serta database melalui pembelajaran
+                    dan project yang saya kerjakan.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SPECIAL ABILITIES -->
+
+        <section class="panel">
+
+            <div class="panel-title">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h2>
+                    SPECIAL ABILITIES
+                </h2>
+
+            </div>
+
+
+            <div class="abilities">
+
+
+                <!-- PROBLEM SOLVING -->
+
+                <div class="ability">
+
+                    <div class="ability-icon">
+
+                        <i class="fa-solid fa-puzzle-piece"></i>
+
+                    </div>
+
+
+                    <h3>
+                        PROBLEM SOLVING
+                    </h3>
+
+
+                    <p>
+
+                        Mampu mencari penyebab masalah
+                        dan mencoba menyelesaikan error
+                        secara mandiri melalui debugging
+                        dan mencari solusi yang sesuai.
+
+                    </p>
+
+
+                    <span class="ability-level">
+                        INTERMEDIATE
+                    </span>
+
+                </div>
+
+
+
+                <!-- TEAMWORK -->
+
+                <div class="ability">
+
+                    <div class="ability-icon">
+
+                        <i class="fa-solid fa-people-group"></i>
+
+                    </div>
+
+
+                    <h3>
+                        TEAMWORK
+                    </h3>
+
+
+                    <p>
+
+                        Mampu bekerja sama dalam tim,
+                        membagi tugas, berdiskusi,
+                        berkomunikasi, dan membantu
+                        menyelesaikan pekerjaan bersama.
+
+                    </p>
+
+
+                    <span class="ability-level">
+                        INTERMEDIATE
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- BACK -->
+
+    <div class="back-wrapper">
+
+        <a href="index.html" class="back">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            BACK TO MENU
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

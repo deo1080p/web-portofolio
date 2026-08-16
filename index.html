@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tri Deo Aditya | Portfolio</title>
+
+    <!-- ICON -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07090d;
+            color: white;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* BACKGROUND */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
+            background-size: 45px 45px;
+            pointer-events: none;
+        }
+
+        .background-glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+
+            background: rgba(0, 174, 255, 0.08);
+            filter: blur(100px);
+
+            border-radius: 50%;
+
+            top: 10%;
+            left: 20%;
+
+            pointer-events: none;
+        }
+
+        /* MAIN */
+
+        .container {
+            width: 100%;
+            height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 50px 8%;
+            position: relative;
+        }
+
+        /* LEFT SIDE */
+
+        .left {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ID CARD */
+
+        .card-wrapper {
+            perspective: 1000px;
+        }
+
+        .id-card {
+            width: 330px;
+            height: 470px;
+
+            position: relative;
+
+            padding: 28px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.09),
+                    rgba(255,255,255,0.025)
+                );
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.7),
+                0 0 50px rgba(0,170,255,0.06);
+
+            backdrop-filter: blur(15px);
+
+            transition: transform 0.15s ease-out;
+            transform-style: preserve-3d;
+
+            overflow: hidden;
+        }
+
+        .id-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            background: #00aaff;
+
+            filter: blur(100px);
+
+            opacity: 0.15;
+
+            right: -80px;
+            top: -80px;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-logo {
+            width: 45px;
+            height: 45px;
+
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(0,170,255,0.12);
+
+            border: 1px solid rgba(0,170,255,0.4);
+
+            color: #00aaff;
+
+            font-size: 20px;
+        }
+
+        .card-status {
+            font-size: 10px;
+            letter-spacing: 2px;
+
+            color: #777;
+        }
+
+        /* PHOTO */
+
+        .photo {
+            width: 150px;
+            height: 150px;
+
+            margin: 35px auto 25px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(145deg, #161b22, #0b0e13);
+
+            border: 2px solid rgba(0,170,255,0.5);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 0 40px rgba(0,170,255,0.15);
+        }
+
+        .photo i {
+            font-size: 65px;
+            color: #555;
+        }
+
+        .identity {
+            text-align: center;
+        }
+
+        .identity h1 {
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+
+        .identity p {
+            margin-top: 8px;
+
+            color: #00aaff;
+
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .card-line {
+            height: 1px;
+
+            background: rgba(255,255,255,0.08);
+
+            margin: 25px 0;
+        }
+
+        .card-info {
+            display: flex;
+            justify-content: space-between;
+
+            color: #777;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-info strong {
+            display: block;
+
+            margin-top: 6px;
+
+            color: white;
+
+            font-size: 12px;
+        }
+
+        .card-footer {
+            position: absolute;
+
+            bottom: 25px;
+            left: 28px;
+            right: 28px;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 9px;
+
+            color: #555;
+
+            letter-spacing: 2px;
+        }
+
+        /* RIGHT SIDE */
+
+        .right {
+            width: 45%;
+            max-width: 600px;
+        }
+
+        .small-title {
+            color: #00aaff;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 12px;
+        }
+
+        .title {
+            font-size: 48px;
+
+            line-height: 1.1;
+
+            margin-bottom: 35px;
+        }
+
+        .title span {
+            color: #00aaff;
+        }
+
+        /* =========================
+   GAME STYLE MENU
+========================= */
+
+.menu {
+    width: 100%;
+    height: 280px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    perspective: 1000px;
+}
+
+/* garis dekorasi */
+
+
+
+/* ITEM */
+
+.menu-item {
+    width: 150px;
+    height: 190px;
+
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: #555;
+
+    text-decoration: none !important;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.5s cubic-bezier(.2,.8,.2,1),
+        opacity 0.5s ease,
+        filter 0.5s ease,
+        border 0.5s ease,
+        box-shadow 0.5s ease;
+
+    transform-style: preserve-3d;
+}
+	.menu-item,
+	.menu-item:link,
+	.menu-item:visited,
+	.menu-item:hover,
+	.menu-item:active {
+    text-decoration: none !important;
+}
+
+.menu-item h3,
+.menu-item p,
+.menu-item .menu-number {
+    text-decoration: none !important;
+}
+
+/* ICON */
+
+.menu-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.04);
+
+    font-size: 25px;
+
+    transition: 0.4s;
+}
+
+/* TEXT */
+
+.menu-text {
+    text-align: center;
+}
+
+.menu-text h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.menu-text p {
+    font-size: 10px;
+
+    color: #444;
+}
+
+.menu-number {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #444;
+}
+
+
+/* =========================
+   ACTIVE CARD
+========================= */
+
+.menu-item.active {
+
+    width: 210px;
+    height: 240px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,170,255,0.14),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(0,170,255,0.5);
+
+    box-shadow:
+        0 0 30px rgba(0,170,255,0.12),
+        inset 0 0 30px rgba(0,170,255,0.04);
+
+    z-index: 5;
+}
+
+.menu-item.active .menu-icon {
+
+    width: 80px;
+    height: 80px;
+
+    color: #00aaff;
+
+    background: rgba(0,170,255,0.12);
+
+    border: 1px solid rgba(0,170,255,0.35);
+
+    font-size: 30px;
+
+    box-shadow:
+        0 0 25px rgba(0,170,255,0.15);
+}
+
+.menu-item.active .menu-text h3 {
+    font-size: 20px;
+}
+
+.menu-item.active .menu-text p {
+    color: #777;
+}
+
+.menu-item.active .menu-number {
+    color: #00aaff;
+}
+
+
+/* =========================
+   CAROUSEL POSITIONS
+========================= */
+
+.menu-item.pos-left {
+
+    transform:
+        translateX(-235px)
+        scale(0.75)
+        rotateY(15deg);
+
+    opacity: 0.45;
+
+    filter: brightness(0.6);
+
+    z-index: 2;
+}
+
+.menu-item.pos-center {
+
+    transform:
+        translateX(0)
+        scale(1);
+
+    opacity: 1;
+
+    z-index: 5;
+}
+
+.menu-item.pos-right {
+
+    transform:
+        translateX(235px)
+        scale(0.75)
+        rotateY(-15deg);
+
+    opacity: 0.45;
+
+    filter: brightness(0.6);
+
+    z-index: 2;
+}
+
+.menu-item.pos-hidden-left {
+
+    transform:
+        translateX(-450px)
+        scale(0.5);
+
+    opacity: 0;
+
+    z-index: 1;
+}
+
+.menu-item.pos-hidden-right {
+
+    transform:
+        translateX(450px)
+        scale(0.5);
+
+    opacity: 0;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.menu-item:not(.active):hover {
+
+    opacity: 0.75;
+
+    filter: brightness(0.9);
+
+    border-color: rgba(0,170,255,0.25);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+.arrow {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(255,255,255,0.035);
+
+    color: #aaa;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.25s;
+}
+
+.arrow:hover {
+
+    color: #00aaff;
+
+    border-color: #00aaff;
+
+    background: rgba(0,170,255,0.1);
+
+    box-shadow:
+        0 0 20px rgba(0,170,255,0.12);
+}
+
+.navigation span {
+
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    min-width: 65px;
+
+    text-align: center;
+}
+
+        /* ARROWS */
+
+        .navigation {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .arrow {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 12px;
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            background: rgba(255,255,255,0.035);
+
+            color: #aaa;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            transition: 0.25s;
+        }
+
+        .arrow:hover {
+            color: white;
+
+            border-color: #00aaff;
+
+            background: rgba(0,170,255,0.1);
+
+            box-shadow: 0 0 20px rgba(0,170,255,0.12);
+        }
+
+        .navigation span {
+            color: #444;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+        }
+
+        /* CONTENT */
+
+        .content {
+            margin-top: 30px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+
+            min-height: 80px;
+        }
+
+        .content p {
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+        .content strong {
+            color: white;
+        }
+
+        /* SOCIAL */
+
+        .social {
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 20px;
+        }
+
+        .social a {
+            width: 38px;
+            height: 38px;
+
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #777;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            color: #00aaff;
+
+            border-color: #00aaff;
+
+            transform: translateY(-3px);
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 900px) {
+
+            body {
+                overflow-y: auto;
+            }
+
+            .container {
+                height: auto;
+                min-height: 100vh;
+
+                flex-direction: column;
+
+                padding: 50px 25px;
+                gap: 60px;
+            }
+
+            .left,
+            .right {
+                width: 100%;
+                max-width: 600px;
+            }
+
+            .id-card {
+                width: 300px;
+                height: 420px;
+            }
+
+            .photo {
+                width: 125px;
+                height: 125px;
+
+                margin: 25px auto 20px;
+            }
+
+            .title {
+                font-size: 38px;
+            }
+        }
+
+        @media(max-width: 450px) {
+
+            .container {
+                padding: 35px 18px;
+            }
+
+            .id-card {
+                width: 280px;
+            }
+
+            .title {
+                font-size: 32px;
+            }
+        }
+        .photo img {
+	    width: 100%;
+    	height: 100%;
+    	object-fit: cover;
+		}
+
+    </style>
+</head>
+
+<body>
+
+<div class="background-glow"></div>
+
+<div class="container">
+
+    <!-- ================= LEFT ================= -->
+
+    <section class="left">
+
+        <div class="card-wrapper">
+
+            <div class="id-card" id="card">
+
+                <div class="card-top">
+
+                    <div class="card-logo">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div class="card-status">
+                        PORTFOLIO
+                    </div>
+
+                </div>
+
+
+                <div class="photo">
+    				<img src="profil.jpg" alt="Foto Profil">
+				</div>
+
+
+                <div class="identity">
+
+                    <h1>TRI DEO ADITYA</h1>
+
+                    <p>NPC</p>
+
+                </div>
+
+
+                <div class="card-line"></div>
+
+
+                <div class="card-info">
+
+                    <div>
+                        MAJOR
+                        <strong>RPL</strong>
+                    </div>
+
+                    <div>
+                        STATUS
+                        <strong>STUDENT</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <span>CLASS OF</span>
+
+                    <span>26—27</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RIGHT ================= -->
+
+    <section class="right">
+
+        <div class="small-title">
+            WELCOME TO MY
+        </div>
+
+        <h2 class="title">
+            DIGITAL <span>PORTFOLIO.</span>
+        </h2>
+
+
+        <!-- MENU -->
+
+        <div class="menu" id="gameMenu">
+
+    <a href="profile.html" class="menu-item" data-index="0">
+
+        <div class="menu-icon">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="menu-text">
+            <h3>Profile</h3>
+            <p>Who am I?</p>
+        </div>
+
+        <div class="menu-number">
+            01
+        </div>
+
+    </a>
+
+
+    <a href="about.html" class="menu-item" data-index="1">
+
+        <div class="menu-icon">
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+        <div class="menu-text">
+            <h3>About</h3>
+            <p>My journey</p>
+        </div>
+
+        <div class="menu-number">
+            02
+        </div>
+
+    </a>
+
+
+    <a href="skills.html" class="menu-item" data-index="2">
+
+        <div class="menu-icon">
+            <i class="fa-solid fa-terminal"></i>
+        </div>
+
+        <div class="menu-text">
+            <h3>Skills</h3>
+            <p>What I can do</p>
+        </div>
+
+        <div class="menu-number">
+            03
+        </div>
+
+    </a>
+
+
+    <a href="contact.html" class="menu-item" data-index="3">
+
+        <div class="menu-icon">
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
+
+        <div class="menu-text">
+            <h3>Contact</h3>
+            <p>Let's connect</p>
+        </div>
+
+        <div class="menu-number">
+            04
+        </div>
+
+    </a>
+
+</div>
+
+
+        <!-- ARROWS -->
+
+        <div class="navigation">
+
+            <button class="arrow" id="prev" type="button">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <span id="counter">
+                01 / 04
+            </span>
+
+            <button class="arrow" id="next" type="button">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="content" id="content">
+
+            <p>
+                Halo, saya <strong>Tri Deo Aditya</strong>,
+                seorang pelajar yang tertarik dengan pengembangan
+                website dan teknologi.
+            </p>
+
+        </div>
+
+
+        
+
+    </section>
+
+</div>
+
+
+<script>
+
+    /* ==========================
+       MENU DATA
+    ========================== */
+
+    const contents = [
+
+        `
+        <p>
+            Halo, saya <strong>Tri Deo Aditya</strong>,
+            seorang Pelajar yang tertarik dengan pengembangan
+            website dan teknologi.
+        </p>
+        `,
+
+        `
+        <p>
+            Saya berasal dari bidang <strong>Rekayasa Perangkat Lunak</strong>
+            dan sedang mengembangkan kemampuan dalam membuat website
+            menggunakan teknologi web modern.
+        </p>
+        `,
+
+        `
+        <p>
+            <strong>HTML</strong> &nbsp; • &nbsp;
+            <strong>CSS</strong> &nbsp; • &nbsp;
+            <strong>PHP</strong> &nbsp; • &nbsp;
+            <strong>JavaScript</strong> &nbsp; • &nbsp;
+            <strong>Java</strong> &nbsp; • &nbsp;
+            <strong>JDBC</strong> &nbsp; • &nbsp;
+            <strong>CRUD</strong> &nbsp; • &nbsp;
+            <strong>Database</strong>
+        </p>
+        `,
+
+        `
+        <p>
+            Tertarik untuk bekerja sama atau ingin mengetahui
+            lebih banyak tentang saya?
+            <strong>Let's connect.</strong>
+        </p>
+        `
+
+    ];
+
+
+    /* ==========================
+       MENU SYSTEM
+    ========================== */
+
+    const menuItems =
+    document.querySelectorAll(".menu-item");
+
+const content =
+    document.getElementById("content");
+
+const counter =
+    document.getElementById("counter");
+
+let current = 0;
+
+
+/* =========================
+   UPDATE CAROUSEL
+========================= */
+
+function updateMenu(index) {
+
+    current = index;
+
+    menuItems.forEach((item, i) => {
+
+        item.classList.remove(
+            "active",
+            "pos-left",
+            "pos-center",
+            "pos-right",
+            "pos-hidden-left",
+            "pos-hidden-right"
+        );
+
+
+        let position =
+            (i - current + menuItems.length)
+            % menuItems.length;
+
+
+        if (position === 0) {
+
+            item.classList.add(
+                "active",
+                "pos-center"
+            );
+
+        }
+
+        else if (position === 1) {
+
+            item.classList.add(
+                "pos-right"
+            );
+
+        }
+
+        else if (position === menuItems.length - 1) {
+
+            item.classList.add(
+                "pos-left"
+            );
+
+        }
+
+        else if (position < menuItems.length / 2) {
+
+            item.classList.add(
+                "pos-hidden-right"
+            );
+
+        }
+
+        else {
+
+            item.classList.add(
+                "pos-hidden-left"
+            );
+
+        }
+
+    });
+
+
+    /* CONTENT */
+
+    content.style.opacity = "0";
+
+    setTimeout(() => {
+
+        content.innerHTML =
+            contents[current];
+
+        content.style.opacity = "1";
+
+    }, 180);
+
+
+    counter.innerHTML =
+        `0${current + 1} / 04`;
+}
+
+
+/* =========================
+   CARD NAVIGATION
+   Each card uses its own href.
+========================= */
+
+/* =========================
+   NEXT
+========================= */
+
+document
+    .getElementById("next")
+    .addEventListener("click", () => {
+
+        current++;
+
+        if (current >= menuItems.length) {
+
+            current = 0;
+
+        }
+
+        updateMenu(current);
+
+    });
+
+
+/* =========================
+   PREVIOUS
+========================= */
+
+document
+    .getElementById("prev")
+    .addEventListener("click", () => {
+
+        current--;
+
+        if (current < 0) {
+
+            current =
+                menuItems.length - 1;
+
+        }
+
+        updateMenu(current);
+
+    });
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "ArrowRight") {
+
+        current++;
+
+        if (current >= menuItems.length) {
+            current = 0;
+        }
+
+        updateMenu(current);
+    }
+
+
+    if (event.key === "ArrowLeft") {
+
+        current--;
+
+        if (current < 0) {
+            current = menuItems.length - 1;
+        }
+
+        updateMenu(current);
+    }
+
+});
+
+
+/* =========================
+   START
+========================= */
+
+updateMenu(0);
+/* =========================
+   ID CARD CURSOR INTERACTION
+========================= */
+
+const card = document.getElementById("card");
+const wrapper = document.querySelector(".card-wrapper");
+
+wrapper.addEventListener("mousemove", (e) => {
+
+    const rect = wrapper.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateY =
+        ((x - centerX) / centerX) * 10;
+
+    const rotateX =
+        ((y - centerY) / centerY) * -10;
+
+    card.style.transform =
+        `rotateX(${rotateX}deg)
+         rotateY(${rotateY}deg)
+         translateZ(15px)`;
+
+});
+
+
+wrapper.addEventListener("mouseleave", () => {
+
+    card.style.transform =
+        "rotateX(0deg) rotateY(0deg) translateZ(0)";
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | Tri Deo Aditya</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            background: #07090d;
+
+            color: white;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+
+            pointer-events: none;
+
+        }
+
+
+        .glow {
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(0,170,255,0.08);
+
+            filter: blur(110px);
+
+            border-radius: 50%;
+
+            left: 20%;
+            top: 20%;
+
+            pointer-events: none;
+
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            padding: 45px 8%;
+
+            position: relative;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .logo-icon {
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            border-radius: 10px;
+
+            color: #00aaff;
+
+            background: rgba(0,170,255,0.1);
+
+            border: 1px solid rgba(0,170,255,0.35);
+
+        }
+
+
+        .page-number {
+
+            color: #555;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 350px 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+        }
+
+
+        /* =========================
+           PROFILE CARD
+        ========================= */
+
+        .profile-card {
+
+            height: 470px;
+
+            padding: 30px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.025)
+                );
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.6),
+                0 0 40px rgba(0,170,255,0.05);
+
+            backdrop-filter: blur(15px);
+
+            text-align: center;
+
+            transition: 0.4s;
+
+        }
+
+
+        .profile-card:hover {
+
+            border-color: rgba(0,170,255,0.35);
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.7),
+                0 0 40px rgba(0,170,255,0.12);
+
+            transform: translateY(-5px);
+
+        }
+
+
+        .photo {
+
+            width: 175px;
+            height: 175px;
+
+            margin: 25px auto 30px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            border: 2px solid #00aaff;
+
+            box-shadow:
+                0 0 35px rgba(0,170,255,0.15);
+
+        }
+
+
+        .photo img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .profile-card h2 {
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .role {
+
+            color: #00aaff;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .line {
+
+            height: 1px;
+
+            background: rgba(255,255,255,0.08);
+
+            margin: 28px 0;
+
+        }
+
+
+        .status {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            text-align: left;
+
+        }
+
+
+        .status div {
+
+            color: #555;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .status strong {
+
+            display: block;
+
+            color: white;
+
+            font-size: 11px;
+
+            margin-top: 7px;
+
+            letter-spacing: 0;
+
+        }
+
+
+        /* =========================
+           RIGHT CONTENT
+        ========================= */
+
+        .info {
+
+            animation: appear 0.7s ease;
+
+        }
+
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateX(30px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateX(0);
+
+            }
+
+        }
+
+
+        .label {
+
+            color: #00aaff;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .info h1 {
+
+            font-size: 55px;
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .info h1 span {
+
+            color: #00aaff;
+
+        }
+
+
+        .description {
+
+            max-width: 650px;
+
+            color: #777;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =========================
+           INFO BOXES
+        ========================= */
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            max-width: 650px;
+
+            margin-top: 30px;
+
+        }
+
+
+        .stat {
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            background: rgba(255,255,255,0.025);
+
+            border: 1px solid rgba(255,255,255,0.07);
+
+            transition: 0.3s;
+
+        }
+
+
+        .stat:hover {
+
+            border-color: rgba(0,170,255,0.3);
+
+            background: rgba(0,170,255,0.04);
+
+            transform: translateY(-3px);
+
+        }
+
+
+        .stat i {
+
+            color: #00aaff;
+
+            font-size: 16px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .stat span {
+
+            display: block;
+
+            color: #555;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .stat strong {
+
+            color: white;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 35px;
+
+            padding: 13px 20px;
+
+            border-radius: 10px;
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .back:hover {
+
+            color: #00aaff;
+
+            border-color: #00aaff;
+
+            background: rgba(0,170,255,0.07);
+
+            box-shadow: 0 0 20px rgba(0,170,255,0.1);
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 850px) {
+
+            .container {
+
+                padding: 30px 20px 50px;
+
+            }
+
+
+            .header {
+
+                margin-bottom: 35px;
+
+            }
+
+
+            .content {
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+            }
+
+
+            .profile-card {
+
+                width: 100%;
+
+                max-width: 350px;
+
+                margin: auto;
+
+            }
+
+
+            .info {
+
+                text-align: center;
+
+            }
+
+
+            .description {
+
+                margin: auto;
+
+            }
+
+
+            .stats {
+
+                margin-left: auto;
+
+                margin-right: auto;
+
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            .info h1 {
+
+                font-size: 40px;
+
+            }
+
+
+            .stats {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .profile-card {
+
+                height: 440px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="glow"></div>
+
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+            TRI DEO ADITYA
+
+        </div>
+
+
+        <div class="page-number">
+
+            01 / PROFILE
+
+        </div>
+
+    </header>
+
+
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+
+        <!-- PROFILE CARD -->
+
+        <section class="profile-card">
+
+            <div class="photo">
+
+                <img
+                    src="profil.jpg"
+                    alt="Foto Profil"
+                >
+
+            </div>
+
+
+            <h2>
+                TRI DEO ADITYA
+            </h2>
+
+
+            <div class="role">
+                NPC
+            </div>
+
+
+            <div class="line"></div>
+
+
+            <div class="status">
+
+                <div>
+
+                    MAJOR
+
+                    <strong>
+                        RPL
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    STATUS
+
+                    <strong>
+                        STUDENT
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INFORMATION -->
+
+        <section class="info">
+
+            <div class="label">
+                MY PROFILE
+            </div>
+
+
+            <h1>
+                Hello, I'm
+                <span>Deo.</span>
+            </h1>
+
+
+            <p class="description">
+
+                Saya merupakan seorang pelajar dari jurusan
+                <strong>Rekayasa Perangkat Lunak (RPL)</strong>
+                yang memiliki ketertarikan terhadap pengembangan
+                website dan teknologi.
+
+                <br><br>
+
+                Saya senang mempelajari teknologi baru,
+                membuat project, dan mengembangkan kemampuan
+                dalam bidang software development.
+
+            </p>
+
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+
+                <div class="stat">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <span>
+                        MAJOR
+                    </span>
+
+                    <strong>
+                        Rekayasa Perangkat Lunak
+                    </strong>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    <span>
+                        FOCUS
+                    </span>
+
+                    <strong>
+                        Web Development
+                    </strong>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    <span>
+                        INTEREST
+                    </span>
+
+                    <strong>
+                        Programming
+                    </strong>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <i class="fa-solid fa-database"></i>
+
+                    <span>
+                        DATABASE
+                    </span>
+
+                    <strong>
+                        JDBC & Database
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- BACK -->
+
+            <a href="index.html" class="back">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                BACK TO MENU
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+</body>
+
+</html>
